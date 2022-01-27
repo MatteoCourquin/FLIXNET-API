@@ -28,16 +28,18 @@ body {
 }
 .screen-home h1 {
   color: #fff;
-  font-size: calc(20px + 3vw);
+  font-size: calc(25px + 3vw);
 }
 .screen-home h1 span {
   color: #ff0000;
   font-weight: bolder;
-  font-size: calc(20px + 4vw);
+  font-size: calc(25px + 5vw);
 }
 .screen-home p {
   color: #fff;
-  font-size: calc(5px + 1vw);
+  text-align: center;
+  font-size: calc(10px + 1vw);
+  padding: 0 10px;
 }
 .screen-home .go-select-movie {
   display: block;
@@ -97,6 +99,7 @@ header .container-btn-type-film .btn-type-film {
   font-size: 1.2rem;
   border-radius: 5px;
   border: none;
+  color: #333;
 }
 header h1 {
   color: red;
@@ -166,6 +169,11 @@ header h1 {
   width: 100vw;
   height: 100vh;
 }
+@media screen and (max-width: 500px) {
+  .screen-details-movies {
+    margin-top: 70px;
+  }
+}
 .screen-details-movies .card-movie-details {
   padding: 50px;
   width: 100%;
@@ -178,6 +186,7 @@ header h1 {
 }
 @media screen and (max-width: 800px) {
   .screen-details-movies .card-movie-details {
+    justify-content: flex-start;
     flex-direction: column;
   }
 }

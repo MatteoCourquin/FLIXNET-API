@@ -7,16 +7,18 @@
     flex-direction: column;
     h1{
         color: $color-white;
-        font-size: calc(20px + 3vw);
+        font-size: calc(25px + 3vw);
         span{
             color: $color-red;
             font-weight: bolder;
-            font-size: calc(20px + 4vw);
+            font-size: calc(25px + 5vw);
         }
     }
     p{
         color: $color-white;
-        font-size: calc(5px + 1vw);
+        text-align: center;
+        font-size: calc(10px + 1vw);
+        padding: 0 10px;
     }
     .go-select-movie{
         display: block;
@@ -49,18 +51,3 @@
         left: 10px;
     }
 }
-// .home-screen{
-//     position: absolute;
-//     display: flex;
-//     justify-content: center;
-//     flex-direction: column;
-//     align-items: center;
-//     z-index: 2;
-//     top: 0;
-//     width: 100%;
-//     height: 100%;
-//     background-color: $color-black;
-//     
-
-//    
-// }

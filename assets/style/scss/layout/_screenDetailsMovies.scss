@@ -13,6 +13,9 @@
 }
 
 .screen-details-movies{
+    @media screen and (max-width : 500px) {
+        margin-top: 70px;
+    }
     display: none;
     width: 100vw;
     height: 100vh;
@@ -26,6 +29,7 @@
         justify-content: center;
         align-items: center;
         @media screen and (max-width : 800px) {
+            justify-content: flex-start;
             flex-direction: column;
         }
         .titles-movie{
