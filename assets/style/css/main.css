@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap");
+@font-face {
+  font-family: "netflix";
+  src: url("../../fonts/BebasNeue.otf") format("truetype");
+}
+*, *::after, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #333;
+  font-family: "netflix", sans-serif;
+}
+
+.screen {
+  width: 100vw;
+  height: 100vh;
+}
+
+.screen-home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.screen-home h1 {
+  color: #fff;
+  font-size: calc(20px + 3vw);
+}
+.screen-home h1 span {
+  color: #ff0000;
+  font-weight: bolder;
+  font-size: calc(20px + 4vw);
+}
+.screen-home p {
+  color: #fff;
+  font-size: calc(5px + 1vw);
+}
+.screen-home .go-select-movie {
+  display: block;
+  border: 0;
+  border-radius: 10px;
+  background: #ff0000;
+  color: #fff;
+  padding: 10px 30px;
+  margin: 20px 0 30px 0;
+  text-decoration: none;
+  font-family: "netflix", sans-serif;
+  font-size: calc(20px + 1vw);
+  cursor: pointer;
+}
+.screen-home .meteo {
+  position: absolute;
+  top: 10px;
+  z-index: 2;
+  text-align: end;
+  color: #fff;
+  font-size: 20px;
+  right: 10px;
+}
+.screen-home .loca {
+  position: absolute;
+  top: 10px;
+  z-index: 2;
+  color: #fff;
+  font-size: 20px;
+  left: 10px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  padding: 20px;
+}
+header .container-btn-type-film {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+}
+@media screen and (max-width: 600px) {
+  header .container-btn-type-film {
+    justify-content: space-between;
+  }
+}
+header .container-btn-type-film .btn-type-film {
+  cursor: pointer;
+  padding: 5px 20px;
+  margin: 5px 2px;
+  font-family: "netflix", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: none;
+}
+header h1 {
+  color: red;
+  font-size: 60px;
+  margin: 0;
+}
+@media screen and (max-width: 600px) {
+  header h1 {
+    display: none;
+  }
+}
+
+.container-cards-movies {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.container-cards-movies .card-movie {
+  flex-shrink: 0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 300px;
+  height: 370px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.container-cards-movies .card-movie .bottom-black {
+  background: linear-gradient(rgba(0, 0, 0, 0), black);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 200px;
+}
+.container-cards-movies .card-movie img {
+  width: 100%;
+}
+.container-cards-movies .card-movie h1 {
+  position: absolute;
+  color: #fff;
+  bottom: 10px;
+  left: 10px;
+}
+
+.screen-select-movies {
+  display: none;
+}
+
+.return-select-movie {
+  background: transparent;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border: none;
+}
+.return-select-movie img {
+  width: 50px;
+}
+
+.screen-details-movies {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+}
+.screen-details-movies .card-movie-details {
+  padding: 50px;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 800px) {
+  .screen-details-movies .card-movie-details {
+    flex-direction: column;
+  }
+}
+.screen-details-movies .card-movie-details .titles-movie {
+  padding: 20px;
+}
+.screen-details-movies .card-movie-details .titles-movie h2 {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+  margin: 10px 0;
+  color: #fff;
+}
+.screen-details-movies .card-movie-details .titles-movie p {
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  font-size: 1rem;
+}
+.screen-details-movies .card-movie-details img {
+  width: 300px;
+  border-radius: 10px;
+}
+
+/*# sourceMappingURL=main.css.map */

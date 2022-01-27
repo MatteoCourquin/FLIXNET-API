@@ -1,0 +1,66 @@
+
+
+.screen-home{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    h1{
+        color: $color-white;
+        font-size: calc(20px + 3vw);
+        span{
+            color: $color-red;
+            font-weight: bolder;
+            font-size: calc(20px + 4vw);
+        }
+    }
+    p{
+        color: $color-white;
+        font-size: calc(5px + 1vw);
+    }
+    .go-select-movie{
+        display: block;
+        border: 0;
+        border-radius: 10px;
+        background: $color-red;
+        color: $color-white;
+        padding: 10px 30px;
+        margin: 20px 0 30px 0;
+        text-decoration: none;
+        font-family: $font-netfix;
+        font-size: calc(20px + 1vw);
+        cursor: pointer;
+    }
+    .meteo{
+        position: absolute;
+        top: 10px;
+        z-index: 2;
+        text-align: end;
+        color: $color-white;
+        font-size: 20px;
+        right: 10px;
+    }
+    .loca{
+        position: absolute;
+        top: 10px;
+        z-index: 2;
+        color: $color-white;
+        font-size: 20px;
+        left: 10px;
+    }
+}
+// .home-screen{
+//     position: absolute;
+//     display: flex;
+//     justify-content: center;
+//     flex-direction: column;
+//     align-items: center;
+//     z-index: 2;
+//     top: 0;
+//     width: 100%;
+//     height: 100%;
+//     background-color: $color-black;
+//     
+
+//    
+// }

@@ -1,0 +1,17 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+@font-face {
+    font-family: 'netflix';
+    src: url('../../fonts/BebasNeue.otf') format('truetype');
+}
+
+// Variables
+// *********
+
+// Color
+$color-black: #333;
+$color-white: #fff;
+$color-red: #ff0000;
+
+// Fonts
+$font-netfix: 'netflix', sans-serif;
