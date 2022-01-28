@@ -23,4 +23,4 @@ To make my site dynamic, I use the two api's with the fetch method and I retriev
 
 
 
-*Link to project : https://flixnet.courqu.in/*
+*Link to project : https://flixnet.courqu.in/*# js-apis-MatteoCourquin
