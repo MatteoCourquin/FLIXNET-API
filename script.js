@@ -1,6 +1,7 @@
 // * Variables *
 
 const btnGoSelectMovie = document.querySelector('.go-select-movie')
+const btnAccessAnyway = document.querySelector('.btn-access-anyway')
 const btnGoMovieDetails = document.querySelector('.go-movie-details')
 const btnReturnSelectMovie = document.querySelector('.return-select-movie')
 const btnTypeFilm = document.querySelectorAll('.btn-type-film')
@@ -9,7 +10,7 @@ const screenHome = document.querySelector('.screen-home')
 const screenSelectMovie = document.querySelector('.screen-select-movies')
 const screenDetailsMovies = document.querySelector('.screen-details-movies')
 
-const containerMessageHome = document.querySelector('.descriptionMeteo')
+const containerMessageHome = document.querySelector('.description-meteo')
 const containerInfoMeteo = document.querySelector('.meteo')
 const containerInfoLoca = document.querySelector('.loca')
 
@@ -20,7 +21,7 @@ const containerDetailsMovie = document.querySelector('.container-details-movies'
 
 function insertHtmlCardMeteo(data) {
     containerInfoMeteo.innerHTML += `
-        <p>${Math.trunc(data.main.temp)} ° C</p>
+        <p>${Math.trunc(data.main.temp)} ° F</p>
         <p>${data.weather[0].description}</p>
         `
 }
@@ -34,42 +35,45 @@ function insertHtmlMessage(data, altitude) {
     if (getTime() > convertUnix(data.sys.sunrise) && getTime() > convertUnix(data.sys.sunset)) {
         btnGoSelectMovie.style.display = 'block'
         containerMessageHome.innerHTML += `
-        <p>Jespere que vous avez passé une bonne journée 🚀! Ravi de vous retrouver 🍿!</p>
+        <p>Hope you had a great day 🚀! Nice to meet you 🍿!</p>
         `
     } else if (getTime() <= 430){
         btnGoSelectMovie.style.display = 'none'
+        btnAccessAnyway.style.display = 'block'
         containerMessageHome.innerHTML += `
-        <p>Il se fait tard 😴. Allez vous coucher 🛏!</p>
+        <p>It's getting late 😴. It's time to go to bed 🛏!</p>
         `
     } else if (getTime() > 430 && getTime() <= convertUnix(data.sys.sunrise)){
         btnGoSelectMovie.style.display = 'block'
         containerMessageHome.innerHTML += `
-        <p>J'espere que vous avez bien dormi🚀. Bonne journée 🔋!</p>
+        <p>Hope you slept well🚀. Have a nice day 🔋!</p>
         `
     } else if (data.rain) { 
         btnGoSelectMovie.style.display = 'block'
         containerMessageHome.innerHTML += `
-        <p>Il pleut🌧... Ne tentez pas de jouer <em>"Chantons sous la pluie"</em> ☔. Venez plutot le regarder avec nous 🍿.</p>
+        <p>It's raining🌧... Don't try to play <em>"Let's sing in the rain"</em> ☔. Come and watch it with us instead 🍿.</p>
         `
     } else if (data.snow && altitude >= 1800) {
         btnGoSelectMovie.style.display = 'none'
+        btnAccessAnyway.style.display = 'block'
         containerMessageHome.innerHTML += `
-        <p>Il semblerait que vous soyez au ski ❄. Allez donc en faire ⛷! On se voit ce soir 🍿.</p>
+        <p>It looks like you're skiing ❄. So go do some ⛷! See you tonight 🍿.</p>
         `
     } else if (data.snow) {
         btnGoSelectMovie.style.display = 'block'
         containerMessageHome.innerHTML += `
-        <p>Il neige ❄. À part si vous avez des skis aux pieds, ne tentez pas une glissade ⛷. Restez plutot dans le canapé avec nous 🍿.</p>
+        <p>It's snowing ❄. Unless you have skis on your feet, do not attempt a slide ⛷. Stay on the couch with us instead 🍿.</p>
         `
-    } else if (data.main.temp <= 10){
+    } else if (data.main.temp <= 50){
         btnGoSelectMovie.style.display = 'block'
         containerMessageHome.innerHTML += `
-        <p>Il fait seulement ${Math.trunc(data.main.temp)} ° C 🥶. Venez vous réchauffer a la maison devant un bon film 🍿! N'allez pas tomber malade 🤒!</p>
+        <p>It's only ${Math.trunc(data.main.temp)} ° F 🥶. Come warm up at home in front of a good movie 🍿! Don't get sick 🤒!</p>
         `
-    } else if (data.main.temp > 10){
+    } else if (data.main.temp >= 50){
         btnGoSelectMovie.style.display = 'none'
+        btnAccessAnyway.style.display = 'block'
         containerMessageHome.innerHTML += `
-        <p>Il fait ${Math.trunc(data.main.temp)} ° C ☀️. Pour votre bien, nous vous conseillons de sortir prendre l'air ⛱.</p>
+        <p>It's ${Math.trunc(data.main.temp)} ° F ☀️. For your good, we advise you to get some fresh air ⛱.</p>
         `
     }
 }
@@ -177,14 +181,14 @@ if(navigator.geolocation) {
         // TODO • to test, uncomment "API 1" and comment "API 2"
 
         // altitude = 1800 // TODO • High Altitude (for ski station)
-        // let ville = 'stykkisholmur' // TODO • Snow
-        // let ville = 'paris' // TODO • Cold
-        // let ville = 'quito' // TODO • Rain
-        // let ville = 'bamako' // TODO • Sun
+        // let city = 'stykkisholmur' // TODO • Snow
+        // let city = 'paris' // TODO • Cold
+        // let city = 'quito' // TODO • Rain
+        // let city = 'bamako' // TODO • Sun
 
-        // fetch(`https://api.openweathermap.org/data/2.5/weather?q=${ville}&units=metric&lang=fr&appid=d855f06f0b57beb1dc2217c709e5bca0`) // TODO • API 1
+        // fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&lang=en&appid=d855f06f0b57beb1dc2217c709e5bca0`) // TODO • API 1
 
-        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&lang=fr&appid=d855f06f0b57beb1dc2217c709e5bca0`) // TODO • API 2
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=imperial&lang=en&appid=d855f06f0b57beb1dc2217c709e5bca0`) // TODO • API 2
             .then(response => response.json())
             .then(data => {
 
@@ -200,7 +204,7 @@ if(navigator.geolocation) {
     }, () => {
         btnGoSelectMovie.style.display = 'block'
         containerMessageHome.innerHTML += `
-        <p>Il semblerait qu'il y ai un probleme 🙁. Essayer d'activer votre localisation📍!..</p>
+        <p>It seems that there is a problem 🙁. Try to activate your location and refresh the page 📍!...</p>
         `
     })
 }
@@ -208,6 +212,10 @@ if(navigator.geolocation) {
 
 // * Move screen to screen *
 
+btnAccessAnyway.addEventListener('click', () => {
+    screenHome.style.display = 'none'
+    screenSelectMovie.style.display = 'block'
+})
 btnGoSelectMovie.addEventListener('click', () => {
     screenHome.style.display = 'none'
     screenSelectMovie.style.display = 'block'

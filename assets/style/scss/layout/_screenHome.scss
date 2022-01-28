@@ -14,24 +14,31 @@
             font-size: calc(25px + 5vw);
         }
     }
-    p{
+    .description-meteo{
         color: $color-white;
         text-align: center;
         font-size: calc(10px + 1vw);
         padding: 0 10px;
     }
-    .go-select-movie{
-        display: block;
+    .go-select-movie, .btn-access-anyway{
         border: 0;
-        border-radius: 10px;
-        background: $color-red;
-        color: $color-white;
-        padding: 10px 30px;
         margin: 20px 0 30px 0;
         text-decoration: none;
         font-family: $font-netfix;
-        font-size: calc(20px + 1vw);
         cursor: pointer;
+    }
+    .go-select-movie{
+        color: $color-white;
+        display: block;
+        font-size: calc(20px + 1vw);
+        border-radius: 10px;
+        background: $color-red;
+        padding: 10px 30px;
+    }
+    .btn-access-anyway{
+        display: none;
+        background: transparent;
+        color: $color-red;
     }
     .meteo{
         position: absolute;
