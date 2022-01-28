@@ -36,10 +36,15 @@ function insertHtmlMessage(data, altitude) {
         containerMessageHome.innerHTML += `
         <p>Jespere que vous avez passé une bonne journée 🚀! Ravi de vous retrouver 🍿!</p>
         `
-    } else if (getTime() < convertUnix(data.sys.sunrise)){
+    } else if (getTime() <= 430){
         btnGoSelectMovie.style.display = 'none'
         containerMessageHome.innerHTML += `
         <p>Il se fait tard 😴. Allez vous coucher 🛏!</p>
+        `
+    } else if (getTime() > 430 && getTime() <= convertUnix(data.sys.sunrise)){
+        btnGoSelectMovie.style.display = 'block'
+        containerMessageHome.innerHTML += `
+        <p>J'espere que vous avez bien dormi🚀. Bonne journée 🔋!</p>
         `
     } else if (data.rain) { 
         btnGoSelectMovie.style.display = 'block'
@@ -111,7 +116,7 @@ function insertHtmlCardFilm(data) {
                             <div class="card-movie-details">
                                 <img src='${data.image.original}'>
                                 <div class='titles-movie'>
-                                    <h2>${data.name}</h2>
+                                    <h2>${data.name} <span>☆ ${data.rating.average}</span></h2>
                                     <p>${data.summary}</p>
                                 </div>
                             </div>

@@ -200,6 +200,10 @@ header h1 {
   margin: 10px 0;
   color: #fff;
 }
+.screen-details-movies .card-movie-details .titles-movie h2 span {
+  margin-left: 10px;
+  font-size: 1rem;
+}
 .screen-details-movies .card-movie-details .titles-movie p {
   color: #fff;
   font-family: "Roboto", sans-serif;
